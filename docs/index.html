@@ -2,18 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
+    <div class="columns">
+      <div class="column is-3">
+        <div style="background-color: red">a</div>
+      </div>
+      <div class="column is-6">
+        <div style="background-color: blue">b</div>
+      </div>
+      <div class="column is-3">
+        <div style="background-color: yellow">b</div>
+      </div>
+    </div>
+
+
     <div id="mycounter">
-      <div v-for="counter in counters">
+      <div v-for="counter in counters" class="columns">
+        <div class="column is-1"></div>
         <textarea v-model="counter.text" rows="1" cols="20"></textarea>
         <button v-on:click="countUp(counter)">Up</button>
         <span>{{ counter.count }}</span>
         <button v-on:click="countDown(counter)">Down</button>
         <button v-on:click="removeCounter(counter)">×</button>
+        <div class="column is-1"></div>
       </div>
       <button v-on:click="addCounter">Add</button>
     </div>
