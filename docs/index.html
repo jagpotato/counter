@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="mycounter">
+      <div v-for="counter in counters">
+        <textarea v-model="counter.text" rows="1" cols="20"></textarea>
+        <button v-on:click="countUp(counter)">Up</button>
+        <span>{{ counter.count }}</span>
+        <button v-on:click="countDown(counter)">Down</button>
+        <button v-on:click="removeCounter(counter)">×</button>
+      </div>
+      <button v-on:click="addCounter">Add</button>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
