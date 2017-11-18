@@ -1,4 +1,7 @@
-textarea {
-  min-width: 160px;
-  min-height: 13px;
+.textarea {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+p {
 }
