@@ -1,4 +1,79 @@
 <!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>counter</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  
+  <body>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <h1 class="navbar-item title is-4">
+          counter
+        </h1>
+      </div>
+    </nav>
+    <section class="section">
+      <div id="mycounter" class="container">
+        <div class="columns">
+          <div class="column">
+
+          </div>
+          <div class="column is-four-fifths">
+            <div class="field is-grouped is-grouped-centered" v-for="counter in counters">
+              <div class="control is-expanded">
+                <input class="input" type="text" v-model="counter.text">
+              </div>
+              <div class="control">
+                <button class="button is-danger" v-on:click="countUp(counter)">
+                  <span class="icon">
+                    <i class="fas fa-plus"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="control">
+                <span class="tag is-white is-large">{{ counter.count }}</span>
+              </div>
+              <div class="control">
+                <button class="button is-link" v-on:click="countDown(counter)">
+                  <span class="icon">
+                    <i class="fas fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="control">
+                <button class="button is-dark" v-on:click="removeCounter(counter)">
+                  <span class="icon">
+                    <i class="fas fa-times"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control">
+                <button class="button is-rounded" v-on:click="addCounter">Add Counter</button>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            
+          </div>
+        </div>
+  
+      </div>
+    </section>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+
+</html>
+
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -14,13 +89,6 @@
       <div class="column"></div>
     </div>
     <div class="columns">
-      <!-- <div class="column is-3" style="border:solid"></div>
-      <div class="column is-2" style="border:solid"></div>
-      <div class="column is-1" style="border:solid"></div>
-      <div class="column is-1" style="border:solid"></div>
-      <div class="column is-1" style="border:solid"></div>
-      <div class="column is-1" style="border:solid"></div>
-      <div class="column is-3" style="border:solid"></div> -->
       <div class="column is-3"></div>
       <div class="column is-2"></div>
       <div class="column is-1"></div>
@@ -46,16 +114,9 @@
         <div class="control">
           <button class="button" v-on:click="removeCounter(counter)">×</button>
         </div>
-        <!--
-        <textarea class="textarea" v-model="counter.text" rows="1" cols="20"></textarea>
-        <button class="button" v-on:click="countUp(counter)">Up</button>
-        <span>{{ counter.count }}</span>
-        <button class="button" v-on:click="countDown(counter)">Down</button>
-        <button class="button" v-on:click="removeCounter(counter)">×</button>
-        -->
       </div>
       <button v-on:click="addCounter">Add</button>
     </div>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
-</html>
+</html> -->
